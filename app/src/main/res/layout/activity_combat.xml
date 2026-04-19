@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Combat Encounter"
+            android:textColor="#008B8B"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- HORIZONTAL BATTLEFIELD -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+            
+            <!-- LEFT COLUMN: THREAT -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:id="@+id/text_combat_threat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Threat"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#FF4444"
+                    android:layout_marginBottom="8dp"/>
+
+                <ImageView
+                    android:id="@+id/img_combat_threat"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:src="@drawable/img_threat_alien"
+                    android:scaleType="centerInside"
+                    android:layout_marginBottom="16dp"/>
+
+                <FrameLayout
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content">
+                    <ProgressBar
+                        android:id="@+id/progress_threat_hp"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:progressDrawable="@android:drawable/progress_horizontal"
+                        android:progressTint="#FF0000"
+                        android:progress="100"/>
+                    <TextView
+                        android:id="@+id/text_threat_hp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="100/100"
+                        android:textSize="14sp"
+                        android:textColor="#FFFFFF"
+                        android:gravity="center"
+                        android:textStyle="bold"/>
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- RIGHT COLUMN: SQUAD -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your Squad"
+                    android:textColor="#03DAC5"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"/>
+                
+                <ScrollView 
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <LinearLayout
+                        android:id="@+id/layout_squad_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:animateLayoutChanges="true">
+                        <!-- Squad members will be inflated here -->
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ACTION AREA -->
+        <TextView
+            android:id="@+id/text_turn_prompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Turn: Player X"
+            android:textColor="#FFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btn_action_attack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Attack"
+                android:backgroundTint="#008B8B"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btn_action_defend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Defend"
+                android:backgroundTint="#008B8B"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btn_action_special"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Special"
+                android:backgroundTint="#008B8B"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_combat_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Return to Base"
+            android:backgroundTint="#008B8B"
+            android:visibility="gone"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+    <!-- PROJECTILE LAYER -->
+    <ImageView
+        android:id="@+id/img_projectile"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/anim_fireball"
+        android:visibility="gone"
+        android:elevation="10dp" />
+
+</RelativeLayout>

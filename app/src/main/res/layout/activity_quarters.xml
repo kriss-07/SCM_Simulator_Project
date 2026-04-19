@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Crew Quarters"
+        android:textColor="#008B8B"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manage your inactive squad members here."
+        android:layout_marginBottom="16dp"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#2E2E2E"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location Transfers Setup"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="8dp"/>
+
+        <Spinner
+            android:id="@+id/spinner_quarters_crew"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_transfer_simulator"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="To Simulator"
+                android:backgroundTint="#008B8B"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btn_transfer_mission"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="To Mission Ctrl"
+                android:backgroundTint="#008B8B"/>
+
+        </LinearLayout>
+        
+        <Button
+            android:id="@+id/btn_transfer_medbase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Transfer to Med Base &amp; Heal"
+            android:backgroundTint="#008B8B"
+            android:layout_marginTop="8dp"/>
+            
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_rest_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rest All (Restore Energy)"
+        android:backgroundTint="#008B8B"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Current Residents:"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <ListView
+        android:id="@+id/list_quarters_crew"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+</LinearLayout>
